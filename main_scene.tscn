@@ -1,3 +1,10 @@
-[gd_scene format=3 uid="uid://ifwel4iwalbg"]
+[gd_scene load_steps=2 format=3 uid="uid://ifwel4iwalbg"]
 
-[node name="Main Scene" type="Node3D"]
+[ext_resource type="Texture2D" uid="uid://bl1w4530jcim" path="res://Ground.png" id="1_kel1v"]
+
+[node name="Main" type="Node2D"]
+metadata/_edit_vertical_guides_ = [320.0]
+
+[node name="Ground2" type="Sprite2D" parent="."]
+position = Vector2(368, 239)
+texture = ExtResource("1_kel1v")
