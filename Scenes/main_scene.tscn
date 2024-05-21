@@ -21,6 +21,7 @@ anchor_mode = 0
 
 [node name="Grounds" type="Node" parent="."]
 
+<<<<<<< Updated upstream
 [node name="Ground" type="StaticBody2D" parent="Grounds"]
 position = Vector2(571.63, 550.525)
 scale = Vector2(30.6, 7.17)
@@ -31,6 +32,8 @@ shape = SubResource("RectangleShape2D_ow3d6")
 [node name="Sprite2D" type="Sprite2D" parent="Grounds/Ground"]
 texture = ExtResource("1_uuyjr")
 
+=======
+>>>>>>> Stashed changes
 [node name="Player" type="RigidBody2D" parent="."]
 z_index = 1
 position = Vector2(50, 50)
