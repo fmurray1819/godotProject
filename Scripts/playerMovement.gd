@@ -1,7 +1,8 @@
 extends RigidBody2D
 
 const GRAVITY = 500
-const MOVE_FORCE = 500  # Adjust this value to control the speed of horizontal movement
+const MOVE_FORCE = 1200  # Adjust this value to control the speed of horizontal movement
+const JUMP_FORCE = -700  # Adjust this value to control the jump force
 
 func _physics_process(delta):
 	# Apply gravity
@@ -21,3 +22,8 @@ func _physics_process(delta):
 	# Apply horizontal movement force
 	if horizontal_force != Vector2.ZERO:
 		apply_central_impulse(horizontal_force)
+	
+	# Handle jumping
+	if Input.is_action_just_pressed("ui_up"):
+		print("Jumping")
+		apply_central_impulse(Vector2(0, JUMP_FORCE))

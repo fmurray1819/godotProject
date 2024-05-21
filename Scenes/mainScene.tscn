@@ -1,0 +1,44 @@
+[gd_scene load_steps=8 format=3 uid="uid://boal5sduqnwam"]
+
+[ext_resource type="Texture2D" uid="uid://bhl7cjopq27ag" path="res://Objects/Background.png" id="1_5a21o"]
+[ext_resource type="Texture2D" uid="uid://cs3myh04d6mol" path="res://Objects/Ground.png" id="2_lb0c4"]
+[ext_resource type="Script" path="res://Scripts/playerMovement.gd" id="3_twu5x"]
+[ext_resource type="Texture2D" uid="uid://cw8mk0dvu7frh" path="res://Objects/Player.png" id="4_u20bi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jt2sl"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_pumcd"]
+friction = 0.5
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4rrxy"]
+
+[node name="MainScene" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(577.5, 326)
+scale = Vector2(30.4474, 17.1579)
+texture = ExtResource("1_5a21o")
+
+[node name="Ground" type="StaticBody2D" parent="."]
+position = Vector2(578.74, 592.65)
+scale = Vector2(32, -11.23)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+scale = Vector2(1.9, 1.9)
+shape = SubResource("RectangleShape2D_jt2sl")
+
+[node name="Sprite2D" type="Sprite2D" parent="Ground"]
+texture = ExtResource("2_lb0c4")
+
+[node name="Player" type="RigidBody2D" parent="."]
+position = Vector2(185.05, 283.49)
+physics_material_override = SubResource("PhysicsMaterial_pumcd")
+script = ExtResource("3_twu5x")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+texture = ExtResource("4_u20bi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+visible = false
+scale = Vector2(1.9, 1.9)
+shape = SubResource("RectangleShape2D_4rrxy")
