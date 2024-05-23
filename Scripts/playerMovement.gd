@@ -4,6 +4,12 @@ const GRAVITY = 500
 const MOVE_FORCE = 1200  # Adjust this value to control the speed of horizontal movement
 const JUMP_FORCE = -700  # Adjust this value to control the jump force
 
+var raycast_ground: RayCast2D
+
+func _ready():
+	# Reference to the RayCast2D node
+	raycast_ground = get_node("RayCast2D")
+
 func _physics_process(delta):
 	# Apply gravity
 	apply_central_impulse(Vector2(0, GRAVITY * delta))
@@ -24,6 +30,6 @@ func _physics_process(delta):
 		apply_central_impulse(horizontal_force)
 	
 	# Handle jumping
-	if Input.is_action_just_pressed("ui_up"):
+	if Input.is_action_just_pressed("ui_up") and raycast_ground.is_colliding():
 		print("Jumping")
 		apply_central_impulse(Vector2(0, JUMP_FORCE))
