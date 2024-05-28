@@ -11,6 +11,10 @@ var raycast_ground: RayCast2D
 func _ready():
 	# Reference to the RayCast2D node
 	raycast_ground = get_node("RayCast2D")
+	self.custom_integrator = true
+
+func _integrate_forces(state):
+	self.angular_velocity = 0
 
 func _physics_process(delta):
 	# Apply gravity

@@ -1,29 +1,131 @@
 [gd_scene load_steps=5 format=3 uid="uid://boal5sduqnwam"]
 
 [ext_resource type="Texture2D" uid="uid://bhl7cjopq27ag" path="res://Artwork/Background.png" id="1_5a21o"]
-[ext_resource type="PackedScene" uid="uid://l2b8rq4wvwrl" path="res://ground.tscn" id="2_4l5au"]
 [ext_resource type="PackedScene" uid="uid://cjy3mqp64cccx" path="res://Objects/player.tscn" id="3_ib0l3"]
+[ext_resource type="PackedScene" uid="uid://bupyvag46ba52" path="res://Objects/surface.tscn" id="4_ldu7l"]
 [ext_resource type="PackedScene" uid="uid://i3dxcca6fl8i" path="res://Objects/ground.tscn" id="5_1lr6v"]
 
 [node name="MainScene" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(1, 1)
+zoom = Vector2(5.85, 5.85)
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(577.5, 326)
 scale = Vector2(30.4474, 17.1579)
 texture = ExtResource("1_5a21o")
 
-[node name="Ground" parent="." instance=ExtResource("2_4l5au")]
-
 [node name="Player" parent="." instance=ExtResource("3_ib0l3")]
 
-[node name="Ground2" parent="." instance=ExtResource("5_1lr6v")]
+[node name="Grounds" type="Node" parent="."]
+
+[node name="Ground2" parent="Grounds" instance=ExtResource("5_1lr6v")]
 position = Vector2(-19, 183)
 scale = Vector2(1, -11.23)
 
-[node name="Ground3" parent="." instance=ExtResource("5_1lr6v")]
+[node name="Ground3" parent="Grounds" instance=ExtResource("5_1lr6v")]
 position = Vector2(1171, 193)
 scale = Vector2(1, -11.23)
 
-[node name="Ground4" parent="." instance=ExtResource("5_1lr6v")]
+[node name="Ground4" parent="Grounds" instance=ExtResource("5_1lr6v")]
 position = Vector2(574, -19)
 scale = Vector2(32, 1)
+
+[node name="Surface15" parent="Grounds" instance=ExtResource("4_ldu7l")]
+position = Vector2(19, 415)
+
+[node name="Surface2" parent="Grounds" instance=ExtResource("4_ldu7l")]
+position = Vector2(57, 415)
+
+[node name="Surface3" parent="Grounds" instance=ExtResource("4_ldu7l")]
+position = Vector2(95, 415)
+
+[node name="Surface4" parent="Grounds" instance=ExtResource("4_ldu7l")]
+position = Vector2(133, 415)
+
+[node name="Surface5" parent="Grounds" instance=ExtResource("4_ldu7l")]
+position = Vector2(171, 415)
+
+[node name="Surface6" parent="Grounds" instance=ExtResource("4_ldu7l")]
+position = Vector2(209, 415)
+
+[node name="Surface7" parent="Grounds" instance=ExtResource("4_ldu7l")]
+position = Vector2(247, 415)
+
+[node name="Surface8" parent="Grounds" instance=ExtResource("4_ldu7l")]
+position = Vector2(285, 415)
+
+[node name="Surface9" parent="Grounds" instance=ExtResource("4_ldu7l")]
+position = Vector2(323, 415)
+
+[node name="Surface10" parent="Grounds" instance=ExtResource("4_ldu7l")]
+position = Vector2(361, 415)
+
+[node name="Surface11" parent="Grounds" instance=ExtResource("4_ldu7l")]
+position = Vector2(399, 415)
+
+[node name="Surface12" parent="Grounds" instance=ExtResource("4_ldu7l")]
+position = Vector2(437, 415)
+
+[node name="Surface13" parent="Grounds" instance=ExtResource("4_ldu7l")]
+position = Vector2(475, 415)
+
+[node name="Surface14" parent="Grounds" instance=ExtResource("4_ldu7l")]
+position = Vector2(513, 415)
+
+[node name="Surface" parent="Grounds" instance=ExtResource("4_ldu7l")]
+position = Vector2(551, 415)
+
+[node name="Surface16" parent="Grounds" instance=ExtResource("4_ldu7l")]
+position = Vector2(589, 415)
+
+[node name="Surface17" parent="Grounds" instance=ExtResource("4_ldu7l")]
+position = Vector2(627, 415)
+
+[node name="Surface18" parent="Grounds" instance=ExtResource("4_ldu7l")]
+position = Vector2(665, 415)
+
+[node name="Surface19" parent="Grounds" instance=ExtResource("4_ldu7l")]
+position = Vector2(703, 415)
+
+[node name="Surface20" parent="Grounds" instance=ExtResource("4_ldu7l")]
+position = Vector2(741, 415)
+
+[node name="Surface21" parent="Grounds" instance=ExtResource("4_ldu7l")]
+position = Vector2(779, 415)
+
+[node name="Surface22" parent="Grounds" instance=ExtResource("4_ldu7l")]
+position = Vector2(817, 415)
+
+[node name="Surface23" parent="Grounds" instance=ExtResource("4_ldu7l")]
+position = Vector2(855, 415)
+
+[node name="Surface24" parent="Grounds" instance=ExtResource("4_ldu7l")]
+position = Vector2(893, 415)
+
+[node name="Surface25" parent="Grounds" instance=ExtResource("4_ldu7l")]
+position = Vector2(931, 415)
+
+[node name="Surface26" parent="Grounds" instance=ExtResource("4_ldu7l")]
+position = Vector2(969, 415)
+
+[node name="Surface27" parent="Grounds" instance=ExtResource("4_ldu7l")]
+position = Vector2(1007, 415)
+
+[node name="Surface28" parent="Grounds" instance=ExtResource("4_ldu7l")]
+position = Vector2(1045, 415)
+
+[node name="Surface29" parent="Grounds" instance=ExtResource("4_ldu7l")]
+position = Vector2(1083, 415)
+
+[node name="Surface30" parent="Grounds" instance=ExtResource("4_ldu7l")]
+position = Vector2(1121, 415)
+
+[node name="Surface31" parent="Grounds" instance=ExtResource("4_ldu7l")]
+position = Vector2(1159, 415)
+
+[node name="Ground" parent="Grounds" instance=ExtResource("5_1lr6v")]
+position = Vector2(577.91, 562)
+scale = Vector2(30.42, 6.74)

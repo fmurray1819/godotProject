@@ -6,7 +6,7 @@
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_pumcd"]
 friction = 0.5
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4rrxy"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jtk25"]
 
 [node name="Player" type="RigidBody2D"]
 position = Vector2(185.05, 283.49)
@@ -17,9 +17,8 @@ script = ExtResource("1_volgl")
 texture = ExtResource("2_qbt3n")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 scale = Vector2(1.9, 1.9)
-shape = SubResource("RectangleShape2D_4rrxy")
+shape = SubResource("RectangleShape2D_jtk25")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 target_position = Vector2(-0.0500031, 20.51)
