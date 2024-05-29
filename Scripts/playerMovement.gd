@@ -1,24 +1,33 @@
 extends RigidBody2D
 
-const GRAVITY = 500
-const MOVE_FORCE = 1200  # Adjust this value to control the speed of horizontal movement
-const AIR_MOVE_FORCE = 600  # Adjust this value to control the speed of horizontal movement in the air
-const JUMP_FORCE = -700  # Adjust this value to control the jump force
-const MAX_SPEED = 600  # Maximum horizontal speed
+signal entered_water
+signal exited_water
+
+@export var GRAVITY = 500
+@export var WATER_GRAVITY = 250  # Half the gravity for water
+@export var MOVE_FORCE = 1200
+@export var AIR_MOVE_FORCE = 600
+@export var JUMP_FORCE = -700
+@export var MAX_SPEED = 600
 
 var raycast_ground: RayCast2D
+var current_gravity = GRAVITY
 
 func _ready():
 	# Reference to the RayCast2D node
 	raycast_ground = get_node("RayCast2D")
 	self.custom_integrator = true
 
+	# Connect custom signals to local functions
+	connect("entered_water", Callable(self, "_on_entered_water"))
+	connect("exited_water", Callable(self, "_on_exited_water"))
+
 func _integrate_forces(state):
 	self.angular_velocity = 0
 
 func _physics_process(delta):
 	# Apply gravity
-	apply_central_impulse(Vector2(0, GRAVITY * delta))
+	apply_central_impulse(Vector2(0, current_gravity * delta))
 	
 	# Initialize horizontal force to zero
 	var horizontal_force = Vector2.ZERO
@@ -50,3 +59,11 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_up") and raycast_ground.is_colliding():
 		print("Jumping")
 		apply_central_impulse(Vector2(0, JUMP_FORCE))
+
+func _on_entered_water():
+	print("entered water")
+	current_gravity = WATER_GRAVITY
+
+func _on_exited_water():
+	print("left water")
+	current_gravity = GRAVITY
