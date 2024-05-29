@@ -1,16 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://boal5sduqnwam"]
+[gd_scene load_steps=6 format=3 uid="uid://boal5sduqnwam"]
 
 [ext_resource type="Texture2D" uid="uid://bhl7cjopq27ag" path="res://Artwork/Background.png" id="1_5a21o"]
 [ext_resource type="PackedScene" uid="uid://cjy3mqp64cccx" path="res://Objects/player.tscn" id="3_ib0l3"]
 [ext_resource type="PackedScene" uid="uid://bupyvag46ba52" path="res://Objects/surface.tscn" id="4_ldu7l"]
 [ext_resource type="PackedScene" uid="uid://i3dxcca6fl8i" path="res://Objects/ground.tscn" id="5_1lr6v"]
+[ext_resource type="PackedScene" uid="uid://dh47a3g0x0u4u" path="res://Objects/water.tscn" id="5_q6mu4"]
 
 [node name="MainScene" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(576, 324)
-scale = Vector2(1, 1)
-zoom = Vector2(5.85, 5.85)
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(577.5, 326)
@@ -93,18 +92,6 @@ position = Vector2(703, 415)
 [node name="Surface20" parent="Grounds" instance=ExtResource("4_ldu7l")]
 position = Vector2(741, 415)
 
-[node name="Surface21" parent="Grounds" instance=ExtResource("4_ldu7l")]
-position = Vector2(779, 415)
-
-[node name="Surface22" parent="Grounds" instance=ExtResource("4_ldu7l")]
-position = Vector2(817, 415)
-
-[node name="Surface23" parent="Grounds" instance=ExtResource("4_ldu7l")]
-position = Vector2(855, 415)
-
-[node name="Surface24" parent="Grounds" instance=ExtResource("4_ldu7l")]
-position = Vector2(893, 415)
-
 [node name="Surface25" parent="Grounds" instance=ExtResource("4_ldu7l")]
 position = Vector2(931, 415)
 
@@ -129,3 +116,15 @@ position = Vector2(1159, 415)
 [node name="Ground" parent="Grounds" instance=ExtResource("5_1lr6v")]
 position = Vector2(577.91, 562)
 scale = Vector2(30.42, 6.74)
+
+[node name="Area2D" parent="." instance=ExtResource("5_q6mu4")]
+position = Vector2(779, 415)
+
+[node name="Area2D2" parent="." instance=ExtResource("5_q6mu4")]
+position = Vector2(817, 415)
+
+[node name="Area2D3" parent="." instance=ExtResource("5_q6mu4")]
+position = Vector2(855, 415)
+
+[node name="Area2D4" parent="." instance=ExtResource("5_q6mu4")]
+position = Vector2(893, 415)
