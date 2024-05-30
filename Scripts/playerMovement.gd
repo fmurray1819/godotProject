@@ -21,11 +21,13 @@ func _ready():
 	# Connect custom signals to local functions
 	connect("entered_water", Callable(self, "_on_entered_water"))
 	connect("exited_water", Callable(self, "_on_exited_water"))
+	
 
 func _integrate_forces(state):
 	self.angular_velocity = 0
 
 func _physics_process(delta):
+	
 	# Apply gravity
 	apply_central_impulse(Vector2(0, current_gravity * delta))
 	

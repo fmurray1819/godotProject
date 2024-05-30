@@ -1,10 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://b3cv1hjh6kfjg"]
+[gd_scene load_steps=4 format=3 uid="uid://vn0g7ynfbr42"]
 
 [ext_resource type="Texture2D" uid="uid://dhha7rra6xqep" path="res://Artwork/Kill.png" id="1_8essa"]
+[ext_resource type="Script" path="res://Scripts/spikeManager.gd" id="1_eydop"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fm0nn"]
 
 [node name="Kill Area" type="Area2D"]
+script = ExtResource("1_eydop")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(1.9, 1.9)

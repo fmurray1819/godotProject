@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7xfm675von4t"]
+
+[ext_resource type="Texture2D" uid="uid://dhha7rra6xqep" path="res://Artwork/Kill.png" id="1_4y0kh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_57ihw"]
+
+[node name="Sprite2D" type="Sprite2D"]
+texture = ExtResource("1_4y0kh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(1.9, 1.9)
+shape = SubResource("RectangleShape2D_57ihw")

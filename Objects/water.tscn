@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://csb13dwgjhws1"]
+[gd_scene load_steps=4 format=3 uid="uid://dh47a3g0x0u4u"]
 
 [ext_resource type="Texture2D" uid="uid://bw0rvoq6pu7ib" path="res://Artwork/Water.png" id="1_ivnh7"]
 [ext_resource type="Script" path="res://Scripts/waterArea.gd" id="1_rgtcf"]
