@@ -54,3 +54,11 @@ func limit_speed():
 func _input(event):
 	if event.is_action_pressed("ui_up") and raycast_ground.is_colliding():
 		apply_central_impulse(Vector2(0, JUMP_FORCE))
+
+
+func _on_area_2d_body_entered(body):
+	pass # Replace with function body.
+
+
+func _on_area_2d_body_exited(body):
+	pass # Replace with function body.

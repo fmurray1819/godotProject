@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://boal5sduqnwam"]
+[gd_scene load_steps=10 format=3 uid="uid://boal5sduqnwam"]
 
 [ext_resource type="Texture2D" uid="uid://bhl7cjopq27ag" path="res://Artwork/Background.png" id="1_5a21o"]
+[ext_resource type="Script" path="res://Scripts/mainScene.gd" id="1_slnup"]
 [ext_resource type="PackedScene" uid="uid://cjy3mqp64cccx" path="res://Objects/player.tscn" id="3_ib0l3"]
 [ext_resource type="PackedScene" uid="uid://bupyvag46ba52" path="res://Objects/surface.tscn" id="4_ldu7l"]
 [ext_resource type="PackedScene" uid="uid://i3dxcca6fl8i" path="res://Objects/ground.tscn" id="5_1lr6v"]
@@ -14,6 +15,7 @@ size = Vector2(40, 40)
 size = Vector2(38.1818, 38.1818)
 
 [node name="MainScene" type="Node2D"]
+script = ExtResource("1_slnup")
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(578, 327)
@@ -678,6 +680,7 @@ position = Vector2(1121, 453)
 position = Vector2(1159, 453)
 
 [node name="Player" parent="." instance=ExtResource("3_ib0l3")]
+light_mask = 17
 MOVE_FORCE = 600
 AIR_MOVE_FORCE = 200
 JUMP_FORCE = -400
@@ -686,9 +689,11 @@ JUMP_FORCE = -400
 position = Vector2(576, 324)
 
 [node name="Spikes" type="StaticBody2D" parent="."]
-position = Vector2(378.05, 368.1)
+position = Vector2(834.36, 694.32)
+scale = Vector2(5.83, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes"]
+visibility_layer = 17
 position = Vector2(2.08165e-12, 2.08165e-12)
 shape = SubResource("RectangleShape2D_u4op8")
 
@@ -701,3 +706,6 @@ texture = ExtResource("6_cp8jp")
 position = Vector2(-0.0499878, -0.100006)
 scale = Vector2(1.1, 1.1)
 shape = SubResource("RectangleShape2D_g2cwo")
+
+[connection signal="body_entered" from="Spikes/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Spikes/Area2D" to="." method="_on_area_2d_body_exited"]
