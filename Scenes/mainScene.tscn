@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://boal5sduqnwam"]
+[gd_scene load_steps=13 format=3 uid="uid://boal5sduqnwam"]
 
 [ext_resource type="Texture2D" uid="uid://bhl7cjopq27ag" path="res://Artwork/Background.png" id="1_5a21o"]
 [ext_resource type="Script" path="res://Scripts/mainScene.gd" id="1_slnup"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dhha7rra6xqep" path="res://Artwork/Kill.png" id="6_cp8jp"]
 [ext_resource type="PackedScene" uid="uid://h27utw6x4rrk" path="res://Objects/surfaceWater.tscn" id="8_hu7ld"]
 [ext_resource type="Script" path="res://Scenes/InstructionLabel.gd" id="9_kqn8c"]
+[ext_resource type="PackedScene" path="res://Objects/coin.tscn" id="10_rc313"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u4op8"]
 size = Vector2(40, 40)
@@ -759,6 +760,9 @@ script = ExtResource("9_kqn8c")
 [node name="HideTimer" type="Timer" parent="UI/InstructionLabel"]
 wait_time = 10.0
 one_shot = true
+
+[node name="Coin_tscn" parent="." instance=ExtResource("10_rc313")]
+position = Vector2(421, 377)
 
 [connection signal="body_entered" from="Spikes/Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Spikes/Area2D" to="." method="_on_area_2d_body_exited"]

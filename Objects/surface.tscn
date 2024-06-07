@@ -7,14 +7,8 @@
 [node name="Surface" type="StaticBody2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 0)
 scale = Vector2(1.9, 1.9)
 shape = SubResource("RectangleShape2D_jt2sl")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-<<<<<<< Updated upstream
 texture = ExtResource("1_d02k2")
-=======
-position = Vector2(4, 5)
-texture = ExtResource("1_1xb02")
->>>>>>> Stashed changes

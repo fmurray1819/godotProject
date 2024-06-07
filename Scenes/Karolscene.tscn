@@ -1,9 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cbss3lnjanh2"]
+[gd_scene load_steps=5 format=3 uid="uid://cc5o7lkcou4yn"]
 
-[ext_resource type="PackedScene" uid="uid://cupyybxhc30h" path="res://Objects/coin.tscn" id="1_vr5yt"]
+[ext_resource type="PackedScene" path="res://Objects/coin.tscn" id="1_vr5yt"]
 [ext_resource type="PackedScene" uid="uid://cjy3mqp64cccx" path="res://Objects/player.tscn" id="2_unakv"]
 [ext_resource type="PackedScene" uid="uid://bupyvag46ba52" path="res://Objects/surface.tscn" id="3_kfvbx"]
-[ext_resource type="PackedScene" uid="uid://qedynfwouno7" path="res://Objects/HUD.tscn" id="4_685g3"]
+[ext_resource type="PackedScene" path="res://Objects/HUD.tscn" id="4_685g3"]
 
 [node name="Node2D" type="Node2D"]
 
