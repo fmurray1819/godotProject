@@ -678,6 +678,7 @@ JUMP_FORCE = -400
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(576, 324)
+zoom = Vector2(5.85, 5.85)
 
 [node name="Spikes" type="StaticBody2D" parent="."]
 position = Vector2(834.36, 694.32)
