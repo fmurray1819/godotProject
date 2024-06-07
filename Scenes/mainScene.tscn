@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://boal5sduqnwam"]
+[gd_scene load_steps=12 format=3 uid="uid://boal5sduqnwam"]
 
 [ext_resource type="Texture2D" uid="uid://bhl7cjopq27ag" path="res://Artwork/Background.png" id="1_5a21o"]
 [ext_resource type="Script" path="res://Scripts/mainScene.gd" id="1_slnup"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://i3dxcca6fl8i" path="res://Objects/ground.tscn" id="5_1lr6v"]
 [ext_resource type="PackedScene" uid="uid://dh47a3g0x0u4u" path="res://Objects/water.tscn" id="5_a1316"]
 [ext_resource type="Texture2D" uid="uid://dhha7rra6xqep" path="res://Artwork/Kill.png" id="6_cp8jp"]
+[ext_resource type="PackedScene" uid="uid://h27utw6x4rrk" path="res://Objects/surfaceWater.tscn" id="8_hu7ld"]
+[ext_resource type="Script" path="res://Scenes/InstructionLabel.gd" id="9_kqn8c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u4op8"]
 size = Vector2(40, 40)
@@ -18,25 +20,13 @@ size = Vector2(38.1818, 38.1818)
 script = ExtResource("1_slnup")
 
 [node name="Background" type="Sprite2D" parent="."]
-position = Vector2(578, 327)
+position = Vector2(577, 327)
 scale = Vector2(30.4474, 17.1579)
 texture = ExtResource("1_5a21o")
 
 [node name="Tiles" type="Node" parent="."]
 
 [node name="Water" type="Node" parent="Tiles"]
-
-[node name="WaterArea5" parent="Tiles/Water" instance=ExtResource("5_a1316")]
-position = Vector2(779, 453)
-
-[node name="WaterArea6" parent="Tiles/Water" instance=ExtResource("5_a1316")]
-position = Vector2(817, 453)
-
-[node name="WaterArea7" parent="Tiles/Water" instance=ExtResource("5_a1316")]
-position = Vector2(855, 453)
-
-[node name="WaterArea8" parent="Tiles/Water" instance=ExtResource("5_a1316")]
-position = Vector2(893, 453)
 
 [node name="WaterArea9" parent="Tiles/Water" instance=ExtResource("5_a1316")]
 position = Vector2(779, 491)
@@ -681,6 +671,7 @@ position = Vector2(1159, 453)
 
 [node name="Player" parent="." instance=ExtResource("3_ib0l3")]
 light_mask = 17
+position = Vector2(250, 250)
 MOVE_FORCE = 600
 AIR_MOVE_FORCE = 200
 JUMP_FORCE = -400
@@ -707,5 +698,67 @@ position = Vector2(-0.0499878, -0.100006)
 scale = Vector2(1.1, 1.1)
 shape = SubResource("RectangleShape2D_g2cwo")
 
+[node name="WaterArea" parent="." instance=ExtResource("8_hu7ld")]
+position = Vector2(779, 453)
+
+[node name="WaterArea2" parent="." instance=ExtResource("8_hu7ld")]
+position = Vector2(817, 453)
+
+[node name="WaterArea3" parent="." instance=ExtResource("8_hu7ld")]
+position = Vector2(855, 453)
+
+[node name="WaterArea4" parent="." instance=ExtResource("8_hu7ld")]
+position = Vector2(893, 453)
+
+[node name="Ground" parent="." instance=ExtResource("5_1lr6v")]
+position = Vector2(133, 301)
+
+[node name="Ground2" parent="." instance=ExtResource("5_1lr6v")]
+position = Vector2(171, 301)
+
+[node name="Ground3" parent="." instance=ExtResource("5_1lr6v")]
+position = Vector2(95, 301)
+
+[node name="Ground4" parent="." instance=ExtResource("5_1lr6v")]
+position = Vector2(57, 301)
+
+[node name="Ground5" parent="." instance=ExtResource("5_1lr6v")]
+position = Vector2(19, 301)
+
+[node name="Ground6" parent="." instance=ExtResource("5_1lr6v")]
+position = Vector2(133, 263)
+
+[node name="Ground7" parent="." instance=ExtResource("5_1lr6v")]
+position = Vector2(171, 263)
+
+[node name="Ground8" parent="." instance=ExtResource("5_1lr6v")]
+position = Vector2(95, 263)
+
+[node name="Ground9" parent="." instance=ExtResource("5_1lr6v")]
+position = Vector2(57, 263)
+
+[node name="Ground10" parent="." instance=ExtResource("5_1lr6v")]
+position = Vector2(19, 263)
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="InstructionLabel" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = 517.0
+offset_top = 165.0
+offset_right = 766.0
+offset_bottom = 246.0
+text = "Press A or D to move"
+script = ExtResource("9_kqn8c")
+
+[node name="HideTimer" type="Timer" parent="UI/InstructionLabel"]
+wait_time = 10.0
+one_shot = true
+
 [connection signal="body_entered" from="Spikes/Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Spikes/Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="timeout" from="UI/InstructionLabel/HideTimer" to="UI/InstructionLabel" method="_on_hide_timer_timeout"]

@@ -1,6 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://dh47a3g0x0u4u"]
+[gd_scene load_steps=4 format=3 uid="uid://h27utw6x4rrk"]
 
-[ext_resource type="Texture2D" uid="uid://01iar6tcnrol" path="res://Artwork/underWater.png" id="1_nj38o"]
+[ext_resource type="Texture2D" uid="uid://cjevo0ihv3jjf" path="res://Artwork/surfaceWater.png" id="1_lcntq"]
 
 [sub_resource type="GDScript" id="GDScript_ehn8c"]
 script/source = "extends Area2D
@@ -29,4 +29,4 @@ scale = Vector2(1.9, 1.9)
 shape = SubResource("RectangleShape2D_0m7g0")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_nj38o")
+texture = ExtResource("1_lcntq")
