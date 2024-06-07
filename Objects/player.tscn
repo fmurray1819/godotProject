@@ -19,9 +19,9 @@ script = ExtResource("1_volgl")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_qbt3n")
 
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(-0.0500031, 20.51)
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(1.9, 1.9)
 shape = SubResource("CircleShape2D_bsxcj")
-
-[node name="RayCast2D" type="RayCast2D" parent="."]
-target_position = Vector2(-0.0500031, 20.51)

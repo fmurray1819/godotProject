@@ -6,11 +6,11 @@ extends RigidBody2D
 @export var AIR_MOVE_FORCE = 600
 @export var JUMP_FORCE = -700
 @export var MAX_SPEED = 600
+@export var COIN = 0;
 
 # Variables
 var raycast_ground: RayCast2D
 var current_gravity = GRAVITY
-
 func _ready():
 	# Initialize raycast_ground
 	raycast_ground = get_node("RayCast2D")

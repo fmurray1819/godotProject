@@ -1,0 +1,72 @@
+[gd_scene load_steps=5 format=3 uid="uid://cbss3lnjanh2"]
+
+[ext_resource type="PackedScene" uid="uid://cupyybxhc30h" path="res://Objects/coin.tscn" id="1_vr5yt"]
+[ext_resource type="PackedScene" uid="uid://cjy3mqp64cccx" path="res://Objects/player.tscn" id="2_unakv"]
+[ext_resource type="PackedScene" uid="uid://bupyvag46ba52" path="res://Objects/surface.tscn" id="3_kfvbx"]
+[ext_resource type="PackedScene" uid="uid://qedynfwouno7" path="res://Objects/HUD.tscn" id="4_685g3"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Coin_tscn8" parent="." instance=ExtResource("1_vr5yt")]
+position = Vector2(565, 246)
+
+[node name="Coin_tscn4" parent="." instance=ExtResource("1_vr5yt")]
+position = Vector2(490, 288)
+
+[node name="Player" parent="." instance=ExtResource("2_unakv")]
+unique_name_in_owner = true
+position = Vector2(326, 227)
+
+[node name="Surface" parent="." instance=ExtResource("3_kfvbx")]
+position = Vector2(558, 366)
+
+[node name="Surface2" parent="." instance=ExtResource("3_kfvbx")]
+position = Vector2(520, 366)
+
+[node name="Surface3" parent="." instance=ExtResource("3_kfvbx")]
+position = Vector2(482, 366)
+
+[node name="Surface4" parent="." instance=ExtResource("3_kfvbx")]
+position = Vector2(444, 366)
+
+[node name="Surface5" parent="." instance=ExtResource("3_kfvbx")]
+position = Vector2(406, 366)
+
+[node name="Surface6" parent="." instance=ExtResource("3_kfvbx")]
+position = Vector2(368, 366)
+
+[node name="Surface7" parent="." instance=ExtResource("3_kfvbx")]
+position = Vector2(330, 366)
+
+[node name="Coin_tscn" parent="." instance=ExtResource("1_vr5yt")]
+position = Vector2(562, 326)
+
+[node name="Coin_tscn2" parent="." instance=ExtResource("1_vr5yt")]
+position = Vector2(491, 324)
+
+[node name="Coin_tscn3" parent="." instance=ExtResource("1_vr5yt")]
+position = Vector2(526, 326)
+
+[node name="Coin_tscn5" parent="." instance=ExtResource("1_vr5yt")]
+position = Vector2(527, 288)
+
+[node name="Coin_tscn6" parent="." instance=ExtResource("1_vr5yt")]
+position = Vector2(564, 291)
+
+[node name="Coin_tscn7" parent="." instance=ExtResource("1_vr5yt")]
+position = Vector2(491, 245)
+
+[node name="Coin_tscn9" parent="." instance=ExtResource("1_vr5yt")]
+position = Vector2(530, 245)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HUD" parent="." instance=ExtResource("4_685g3")]
+
+[node name="COINS" type="Label" parent="HUD"]
+offset_right = 178.0
+offset_bottom = 99.0
+theme_override_font_sizes/font_size = 64
+text = "Coin:"
+horizontal_alignment = 1
+vertical_alignment = 1
